@@ -1,0 +1,50 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title class="words">Acualizar Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="Id" formControlName="id">
+        <mat-error *ngIf="addressForm.controls['id'].hasError('required')"><strong>Campo Requerido</strong>
+        </mat-error>
+      </mat-form-field>  
+      <div class="row">        
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="nombre" formControlName="nombre">
+            <mat-error *ngIf="addressForm.controls['nombre'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="email" formControlName="email">
+            <mat-error *ngIf="addressForm.controls['email'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        </div>
+        <div class="row">        
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Contraseña</mat-label>
+              <input matInput placeholder="contraseña" formControlName="contraseña">
+              <mat-error *ngIf="addressForm.controls['contraseña'].hasError('required')"><strong>Campo Requerido</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-label>Es Cliente Frecuente</mat-label>
+              <input matInput placeholder="esClienteFrecuente" formControlName="esClienteFrecuente">
+              <mat-error *ngIf="addressForm.controls['esClienteFrecuente'].hasError('required')"><strong>Campo Requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

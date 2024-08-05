@@ -1,0 +1,86 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 200px;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .contenedor {
+    margin: 2rem auto;
+    border: 1px solid #aaa;
+    height: 300px;
+    width:90%;
+    max-width: 400px;
+  
+    overflow:auto;
+    box-sizing: border-box;
+    padding:0 1rem;
+  }
+  
+  .example-header-images {
+      background: 10px;
+  }
+  
+  .circulo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    top: -7px;
+  }
+  
+  .botonlogout{
+    position: relative;
+    display: flex;
+    margin-left: 50px;
+  }
+  
+  /* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+  
+  .contenedor::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  .contenedor::-webkit-scrollbar:vertical {
+    width:10px;
+  }
+  
+  .contenedor::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+  } 
+  
+  .contenedor::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+  
+  .contenedor::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+  }
+  
+  .contenedor::-webkit-scrollbar-track {
+    border-radius: 10px;  
+  }
+  
+  .mat-mdc-card-header {
+    display: flex;
+  }
+  
+  .example-header-text {
+    display: flex;
+    flex-direction: column;
+  }

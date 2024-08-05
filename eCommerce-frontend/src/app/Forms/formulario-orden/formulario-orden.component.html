@@ -1,0 +1,55 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title class="words">Acualizar Orden</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field class="full-width">
+          <mat-label>Id</mat-label>
+          <input matInput placeholder="Id" formControlName="id">
+          <mat-error *ngIf="addressForm.controls['id'].hasError('required')"><strong>Campo Requerido</strong>
+          </mat-error>
+        </mat-form-field>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Usuario</mat-label>
+              <input matInput placeholder="usuarioId" formControlName="usuarioId">
+              <mat-error *ngIf="addressForm.controls['usuarioId'].hasError('required')"><strong>Campo Requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col"><mat-form-field class="full-width">
+            <mat-label>Fecha</mat-label>
+            <input matInput placeholder="fecha" formControlName="fecha">
+            <mat-error *ngIf="addressForm.controls['fecha'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+            </mat-form-field>
+          </div>    
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Total </mat-label>
+              <input matInput placeholder="total" formControlName="total">
+              <mat-error *ngIf="addressForm.controls['total'].hasError('required')"><strong>Campo Requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">            
+              <mat-form-field class="full-width">
+                <mat-label>Descuento Aplicado</mat-label>
+                <input matInput placeholder="descuentoAplicado" formControlName="descuentoAplicado">
+                <mat-error *ngIf="addressForm.controls['descuentoAplicado'].hasError('required')"><strong>Campo Requerido</strong>
+                </mat-error>
+              </mat-form-field>        
+          </div>
+        </div>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>

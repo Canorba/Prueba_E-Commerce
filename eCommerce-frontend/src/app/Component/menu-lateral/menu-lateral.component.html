@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list class="contenedor">
+      <a mat-list-item href="/Home"><mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="home"></mat-icon>Home</a>
+      <a mat-list-item href="/Inventario"><mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon=inventory></mat-icon>Inventario</a>
+      <a mat-list-item href="/Usuario"><mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon=person></mat-icon>Usuario</a>
+      <a mat-list-item href="/Producto"><mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon=shopping_cart></mat-icon>Producto</a>
+      <a mat-list-item href="/Orden"><mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon=article></mat-icon>Orden</a>
+    </mat-nav-list>
+    <i class="fa-brands fa-behance"></i>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div>
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>E-Commerce</span>
+      </div>
+
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <div class="example-header-text">
+          <mat-card-title>Carlos-Ordoñez</mat-card-title>
+          <mat-card-subtitle href="https://github.com/Canorba">github</mat-card-subtitle>
+        </div>
+        <a href="https://github.com/Canorba">
+          <img class="circulo" src="https://img.icons8.com/color-glass/100/null/github--v1.png" alt="Git">
+        </a>
+        <div mat-card-avatar class="example-header-images"></div>
+        <button class="botonlogout" mat-raised-button color="warn" type="submit" (click)="onSubmit()"
+          mat-input>Logout</button>
+      </mat-card-header>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

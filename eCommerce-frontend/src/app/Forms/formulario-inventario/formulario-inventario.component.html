@@ -1,0 +1,36 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title class="words">Acualizar Orden</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field class="full-width">
+          <mat-label>Id</mat-label>
+          <input matInput placeholder="Id" formControlName="id">
+          <mat-error *ngIf="addressForm.controls['id'].hasError('required')"><strong>Campo Requerido</strong>
+          </mat-error>
+        </mat-form-field>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Producto</mat-label>
+              <input matInput placeholder="productoId" formControlName="productoId">
+              <mat-error *ngIf="addressForm.controls['productoId'].hasError('required')"><strong>Campo Requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col"><mat-form-field class="full-width">
+            <mat-label>Cantidad</mat-label>
+            <input matInput placeholder="cantidad" formControlName="cantidad">
+            <mat-error *ngIf="addressForm.controls['cantidad'].hasError('required')"><strong>Campo Requerido</strong>
+            </mat-error>
+            </mat-form-field>
+          </div>    
+        </div>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
